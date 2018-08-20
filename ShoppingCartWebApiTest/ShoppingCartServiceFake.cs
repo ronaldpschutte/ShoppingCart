@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using web_api.Contracts;
-using web_api.Model;
+using ShoppingCartWebApi.Contracts;
+using ShoppingCartWebApi.Model;
 
 namespace WebApiTest
 {

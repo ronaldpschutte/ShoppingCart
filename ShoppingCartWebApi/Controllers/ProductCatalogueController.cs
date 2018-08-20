@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using web_api.Contracts;
-using web_api.Model;
+using ShoppingCartWebApi.Contracts;
+using ShoppingCartWebApi.Model;
 
-namespace web_api.Controllers
+namespace ShoppingCartWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

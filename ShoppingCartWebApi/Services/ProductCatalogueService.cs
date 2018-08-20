@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using web_api.Contracts;
-using web_api.Model;
+using ShoppingCartWebApi.Contracts;
+using ShoppingCartWebApi.Model;
 using System.Web;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace web_api.Sevices
+namespace ShoppingCartWebApi.Sevices
 {
 
     public class ProductCatalogueService : IProductCatalogueService
@@ -23,22 +23,13 @@ namespace web_api.Sevices
             using (StreamReader file = File.OpenText(Path.Combine(Directory.GetCurrentDirectory() + "\\Data\\ProductCatalogue.json")))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                //JObject products = (JObject)serializer.Deserialize(file, typeof(JObject));
-                //foreach(JToken p in products.DescendantsAndSelf().Values())
-                //{
-                //    Product product = p.ToObject<Product>();
-                //    Catalogue.TryAdd(product.Id, product);
-                //}
-
                 Product[] products = (Product[])serializer.Deserialize(file, typeof(Product[]));
                 foreach (Product p in products)
                 {
                     Catalogue.TryAdd(p.Id, p);
+
                 }
-
-
             }
-
         }
 
 
@@ -60,6 +51,5 @@ namespace web_api.Sevices
                 return null; // nog veranderen in http statuscode
             }
         }
-
     }
 }

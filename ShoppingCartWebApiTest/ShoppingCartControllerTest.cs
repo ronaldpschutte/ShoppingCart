@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Xunit;
-using web_api.Controllers;
-using web_api.Model;
-using web_api.Contracts;
+using ShoppingCartWebApi.Controllers;
+using ShoppingCartWebApi.Model;
+using ShoppingCartWebApi.Contracts;
 using System.Linq;
 
 namespace WebApiTest

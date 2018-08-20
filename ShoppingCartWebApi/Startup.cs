@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using web_api.Contracts;
-using web_api.Sevices;
+using ShoppingCartWebApi.Contracts;
+using ShoppingCartWebApi.Sevices;
 
-namespace web_api
+namespace ShoppingCartWebApi
 {
     public class Startup
     {
