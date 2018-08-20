@@ -17,18 +17,25 @@ namespace web_api.Sevices
         private Dictionary<int, Product> Catalogue = new Dictionary<int, Product>();
 
        
-        protected void LoadProductsFromFile()
+        public void LoadProductsFromFile()
         {
 
             using (StreamReader file = File.OpenText(Path.Combine(Directory.GetCurrentDirectory() + "\\Data\\ProductCatalogue.json")))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                JObject products = (JObject)serializer.Deserialize(file, typeof(JObject));
-                foreach(JToken p in products.DescendantsAndSelf().Values())
+                //JObject products = (JObject)serializer.Deserialize(file, typeof(JObject));
+                //foreach(JToken p in products.DescendantsAndSelf().Values())
+                //{
+                //    Product product = p.ToObject<Product>();
+                //    Catalogue.TryAdd(product.Id, product);
+                //}
+
+                Product[] products = (Product[])serializer.Deserialize(file, typeof(Product[]));
+                foreach (Product p in products)
                 {
-                    Product product = p.ToObject<Product>();
-                    Catalogue.TryAdd(product.Id, product);
+                    Catalogue.TryAdd(p.Id, p);
                 }
+
 
             }
 

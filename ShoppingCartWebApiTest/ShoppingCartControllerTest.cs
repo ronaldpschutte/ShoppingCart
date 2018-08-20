@@ -171,7 +171,7 @@ namespace WebApiTest
             var okResponse = _controller.Remove(existingInt);
 
             // Assert
-            Assert.Equal(1, _service.GetAllItems().Count());
+            Assert.DoesNotContain(_service.GetAllItems(), c => c.Id == 1);
         }
     }
 }

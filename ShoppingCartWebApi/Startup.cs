@@ -36,7 +36,7 @@ namespace web_api
             {
                 app.UseHsts();
             }
-            productCatalogue.GetAllItems();
+            productCatalogue.LoadProductsFromFile();
 
             app.UseHttpsRedirection();
             app.UseMvc();

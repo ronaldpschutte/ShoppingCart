@@ -6,6 +6,7 @@ namespace web_api.Contracts
 {
     public interface IProductCatalogueService
     {
+        void LoadProductsFromFile();
         IEnumerable<Product> GetAllItems();
         Product GetById(int id);
     }
