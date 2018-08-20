@@ -14,17 +14,21 @@ namespace web_api.Sevices
     public class ProductCatalogueService : IProductCatalogueService
     {
 
-        private List<Product> Catalogue = new List<Product>();
+        private Dictionary<int, Product> Catalogue = new Dictionary<int, Product>();
 
        
         protected void LoadProductsFromFile()
         {
 
-            using (StreamReader file = File.OpenText(Path.Combine(Directory.GetCurrentDirectory() + "merge.json")))
+            using (StreamReader file = File.OpenText(Path.Combine(Directory.GetCurrentDirectory() + "\\Data\\ProductCatalogue.json")))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 JObject products = (JObject)serializer.Deserialize(file, typeof(JObject));
-                products.Values.
+                foreach(JToken p in products.DescendantsAndSelf().Values())
+                {
+                    Product product = p.ToObject<Product>();
+                    Catalogue.TryAdd(product.Id, product);
+                }
 
             }
 

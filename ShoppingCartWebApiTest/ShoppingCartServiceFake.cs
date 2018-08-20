@@ -4,7 +4,7 @@ using System.Linq;
 using web_api.Contracts;
 using web_api.Model;
 
-namespace web_api_tests
+namespace WebApiTest
 {
     class ShoppingCartServiceFake : IShoppingCartService
     {

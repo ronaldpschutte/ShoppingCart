@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCardWebApi", "ShoppingCardWebApi\ShoppingCardWebApi.csproj", "{8E91EFF9-35D7-4B5C-B7CB-FBD4192A2899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartWebApi", "ShoppingCartWebApi\ShoppingCartWebApi.csproj", "{8E91EFF9-35D7-4B5C-B7CB-FBD4192A2899}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCardWebApiTest", "ShoppingCardWebApiTest\ShoppingCardWebApiTest.csproj", "{21C9CEDD-1DEF-46E0-874B-459AE7883616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartWebApiTest", "ShoppingCartWebApiTest\ShoppingCartWebApiTest.csproj", "{21C9CEDD-1DEF-46E0-874B-459AE7883616}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartApp", "ShoppingCartApp\ShoppingCartApp.csproj", "{FC6F63FC-E778-46C8-BC37-462B5F55C3C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartApp", "ShoppingCartApp\ShoppingCartApp.csproj", "{FC6F63FC-E778-46C8-BC37-462B5F55C3C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

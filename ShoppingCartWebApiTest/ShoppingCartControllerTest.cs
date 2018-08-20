@@ -7,7 +7,7 @@ using web_api.Model;
 using web_api.Contracts;
 using System.Linq;
 
-namespace web_api_tests
+namespace WebApiTest
 {
     public class ShoppingCartControllerTest
     {
