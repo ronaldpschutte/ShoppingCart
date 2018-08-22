@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using ShoppingCartWebApi.Contracts;
-using ShoppingCartWebApi.Model;
+using ShoppingCartWebApi.Models;
 
 namespace ShoppingCartWebApi.Controllers
 {
@@ -47,9 +47,9 @@ namespace ShoppingCartWebApi.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            var item = _service.Add(value);
-            return CreatedAtAction("Get", new { id = item.Id }, item);
+            
+                _service.Add(value);
+                return CreatedAtAction("Get", new { id = value.Id }, value);
         }
 
         // DELETE api/shoppingcart/5

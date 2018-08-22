@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,12 @@ namespace ShoppingCartWebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IShoppingCartService, ShoppingCartService>();
             services.AddSingleton<IProductCatalogueService, ProductCatalogueService>();
+
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                options.HttpsPort = 5001;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +45,7 @@ namespace ShoppingCartWebApi
             }
             productCatalogue.LoadProductsFromFile();
 
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

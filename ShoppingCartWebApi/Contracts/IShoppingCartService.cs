@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using ShoppingCartWebApi.Model;
+using ShoppingCartWebApi.Models;
 
 namespace ShoppingCartWebApi.Contracts
 {
     public interface IShoppingCartService
     {
         IEnumerable<CartItem> GetAllItems();
-        CartItem Add(CartItem newItem);
+        void Add(CartItem newItem);
         CartItem GetById(int id);
         void Remove(int id);
     }

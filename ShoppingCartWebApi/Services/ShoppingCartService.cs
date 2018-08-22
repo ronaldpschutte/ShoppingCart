@@ -1,30 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using ShoppingCartWebApi.Contracts;
-using ShoppingCartWebApi.Model;
+using ShoppingCartWebApi.Models;
 
 namespace ShoppingCartWebApi.Sevices
 {
     public class ShoppingCartService : IShoppingCartService
     {
-        public CartItem Add(CartItem newItem)
+        Dictionary<int,CartItem> cartItems;
+
+        public void Add(CartItem newItem)
         {
-            throw new NotImplementedException();
+            // Create a shoppingCard if this is a first item in Card
+
+            cartItems.Add(newItem.Id, newItem);
+
         }
 
         public IEnumerable<CartItem> GetAllItems()
         {
-            throw new NotImplementedException();
+            return cartItems.Values;
         }
 
         public CartItem GetById(int id)
         {
-            throw new NotImplementedException();
+            return cartItems.GetValueOrDefault(id);
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            cartItems.Remove(id);
         }
     }
 }

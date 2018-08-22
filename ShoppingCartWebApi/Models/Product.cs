@@ -4,14 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShoppingCartWebApi.Model
+namespace ShoppingCartWebApi.Models
 {
-    public class CartItem
+    public class Product
     {
         public int Id { get; set; }
         [Required]
-        public Product product{get;set; }
+        public string Category { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public decimal Price { get; set; }
-        public int Number { get; set; }
+        public string Image { get; set; }
     }
 }

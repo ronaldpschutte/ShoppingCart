@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using ShoppingCartWebApi.Contracts;
-using ShoppingCartWebApi.Model;
+using ShoppingCartWebApi.Models;
 
 namespace ShoppingCartWebApi.Controllers
 {
@@ -17,17 +17,17 @@ namespace ShoppingCartWebApi.Controllers
             _service = service;
         }
 
-        // GET api/shoppingcart
+        // GET api/productcatalogue
         [HttpGet]
-        public ActionResult<IEnumerable<CartItem>> Get()
+        public ActionResult<IEnumerable<Product>> Get()
         {
             var items = _service.GetAllItems();
             return Ok(items);
         }
 
-        // GET api/shoppingcart/5
+        // GET api/productcatalogue/5
         [HttpGet("{id}")]
-        public ActionResult<CartItem> Get(int id)
+        public ActionResult<Product> Get(int id)
         {
             var item = _service.GetById(id);
 

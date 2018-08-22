@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Xunit;
 using ShoppingCartWebApi.Controllers;
-using ShoppingCartWebApi.Model;
+using ShoppingCartWebApi.Models;
 using ShoppingCartWebApi.Contracts;
 using System.Linq;
 
